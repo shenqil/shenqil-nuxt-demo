@@ -1,0 +1,6 @@
+.nuxt
+.vscode
+.gitignore
+.git
+node_modules
+dist

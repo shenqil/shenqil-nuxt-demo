@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 export default {
+  target: 'server', // server(默认), static
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'nuxt-demo',
@@ -43,6 +44,10 @@ export default {
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa'
   ],
+
+  env: {
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {

@@ -1,0 +1,27 @@
+FROM node:lts
+
+# 创建容器内的项目存放目录
+WORKDIR /nodeapp
+
+# node-alpine 需要依赖python
+# RUN apk update && apk upgrade
+# RUN apk add python2
+
+# node 需要依赖python
+# RUN apt-get update || : && apt-get install python -y
+
+COPY . .
+
+RUN yarn install
+RUN yarn run build
+
+# 容器对外暴露的端口号，要和node项目配置的端口号一致
+EXPOSE 3000
+
+ENV NUXT_HOST=0.0.0.0
+# set app port
+ENV NUXT_PORT=3000
+
+# 容器启动时执行的命令
+CMD ["sh", "-c", "npm run start"]
+# npm run start
