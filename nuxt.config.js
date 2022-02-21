@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 export default {
-  target: 'server', // server(默认), static
+  target: 'static', // server(默认), static
+  // ssr: false, // Disable Server Side rendering
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'nuxt-demo',

@@ -14,8 +14,8 @@ export const actions = {
     console.log('nuxtServerInit', Date.now())
 
     // 每次初始化都调用接口
-    const res = await context.$api.get('/visits')
-    const { visitsNumber } = res.data
-    store.commit('increment', visitsNumber)
+    // const res = await context.$api.get('/visits')
+    // const { visitsNumber } = res.data
+    store.commit('increment', 1)
   }
 }
